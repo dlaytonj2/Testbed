@@ -5,8 +5,6 @@ A text-based adventure game set on an abandoned alien starship.
 The player must find escape pods before oxygen runs out.
 """
 
-import random
-import time
 
 class Room:
     def __init__(self, name, description, items=None, exits=None, requires_item=None):
