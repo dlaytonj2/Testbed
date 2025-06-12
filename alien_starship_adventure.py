@@ -310,8 +310,11 @@ class Game:
         if not item:
             print("Take what?")
             return
-        
+
         room = self.rooms[self.player.current_room]
+
+        # Normalize item names to match stored identifiers
+        item = item.lower().replace(' ', '_')
         
         if item == "escape_pod":
             if self.player.current_room == "escape_pods":
@@ -347,7 +350,10 @@ class Game:
         if not item:
             print("Use what?")
             return
-        
+
+        # Normalize item names so commands like "use repair kit" work
+        item = item.lower().replace(' ', '_')
+
         if item not in self.player.inventory:
             print("You don't have that item.")
             return
